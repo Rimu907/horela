@@ -1,5 +1,7 @@
 server:
   port: 9900
+  servlet:
+    context-path: /horela
 
 spring:
   datasource:

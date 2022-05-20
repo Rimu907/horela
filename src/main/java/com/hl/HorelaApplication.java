@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Author:NANDI_GUO
  */
 
-@SpringBootApplication
+    @SpringBootApplication
 public class HorelaApplication {
     public static void main(String[] args) {
         SpringApplication.run(HorelaApplication.class,args);
