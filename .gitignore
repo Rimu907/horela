@@ -1,4 +1,6 @@
-
-.idea/workspace.xml
-*.class
-*.xml
+*.properties
+*.idea
+*.log
+*.iml
+target
+logs

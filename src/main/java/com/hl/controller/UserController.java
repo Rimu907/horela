@@ -2,7 +2,10 @@ package com.hl.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.hl.dto.UserDto;
 import com.hl.entity.User;
+import com.hl.enums.ResultEnum;
+import com.hl.exceptions.CustomException;
 import com.hl.service.IUserService;
 import com.hl.utils.SysResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
  * @Author:NANDI_GUO
  */
 @RestController
-@RequestMapping("/horela")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private IUserService userService;
@@ -27,18 +30,20 @@ public class UserController {
     }
 
     @PostMapping("/addUser")
-    public SysResult addUser(@RequestBody @Validated User user){
+    public SysResult addUser(@RequestBody @Validated UserDto user){
         userService.addUser(user);
         return SysResult.success();
     }
 
     @PutMapping("/modifyUser")
-    public SysResult modifyUser(@PathVariable @Validated User user){
+    public SysResult modifyUser(@RequestBody @Validated UserDto user){
+        userService.modifyUser(user);
         return SysResult.success();
     }
 
     @DeleteMapping("/deleteUser/{id}")
     public SysResult deleteUser(@PathVariable Integer id){
+        userService.removeById(id);
         return SysResult.success();
     }
 }

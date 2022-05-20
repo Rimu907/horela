@@ -26,6 +26,8 @@ public enum ResultEnum {
     USER_PHONE_EXISTS(106,"用户手机号已存在，请检查后重试"),
     USER_REALNAME_EXISTS(107,"用户真实姓名已存在，请检查后重试"),
     USER_STATUS_LIMIT(108,"该用户正被禁用"),
+    USER_INSERT_ERROR(109,"用户新增失败"),
+    USER_MODIFY_ERROR(110,"用户更新失败")
 
     ;
 

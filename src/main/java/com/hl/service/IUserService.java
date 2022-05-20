@@ -1,6 +1,7 @@
 package com.hl.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.hl.dto.UserDto;
 import com.hl.entity.User;
 
 /**
@@ -9,5 +10,6 @@ import com.hl.entity.User;
  */
 public interface IUserService extends IService<User> {
     User getUserByName(String userName);
-    void addUser(User user);
+    void addUser(UserDto user);
+    void modifyUser(UserDto user);
 }
