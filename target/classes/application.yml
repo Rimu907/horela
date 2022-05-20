@@ -1,0 +1,15 @@
+server:
+  port: 9900
+
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/horela?serverTimezone=UTC
+      username: root
+      password: root
+
+mybatis-plus:
+  configration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
