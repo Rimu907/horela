@@ -9,7 +9,6 @@ import com.hl.entity.User;
  * @Author:NANDI_GUO
  */
 public interface IUserService extends IService<User> {
-    User getUserByName(String userName);
     void addUser(UserDto user);
     void modifyUser(UserDto user);
 }

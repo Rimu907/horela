@@ -24,6 +24,11 @@ public class SysResult<T> {
 
     }
 
+    public static <T> SysResult<T> success(String msg){
+        return new SysResult<T>(0,true, msg,null);
+
+    }
+
     public static <T> SysResult<T> success(T data){
         return new SysResult<T>(0,true,"success",data);
     }

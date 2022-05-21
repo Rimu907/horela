@@ -16,6 +16,8 @@ public enum ResultEnum {
     SYSTEM_ERROR(500,"系统异常"),
     // 数据操作错误定义
     //用户
+    USER_NOT_LOGGED(001,"您需要先登录哦"),
+    USER_LOGIN_FAILED(001,"账号或密码错误, 请检查后重试"),
     PARAM_NULL(100, "参数不能为空"),
     USER_ADD_NULL(101, "新增用户参数不能为空"),
     USER_UPDATE_NULL(102, "更新用户参数不能为空"),

@@ -15,4 +15,6 @@ public class VerifyGroup {
     public interface Delete{}
 
     public interface Query{}
+
+    public interface Login{}
 }
