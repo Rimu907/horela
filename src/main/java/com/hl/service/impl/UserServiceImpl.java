@@ -29,13 +29,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private UserMapper userMapper;
 
     @Override
-    public User getUserByName(String userName) {
-        LambdaQueryWrapper<User> wq = Wrappers.lambdaQuery();
-        wq.eq(User::getUsername,userName);
-        return userMapper.selectOne(wq);
-    }
-
-    @Override
     public void modifyUser(UserDto user) {
         LambdaQueryWrapper<User> userWrapper = Wrappers.lambdaQuery();
         userWrapper.ne(User::getId,user.getId())

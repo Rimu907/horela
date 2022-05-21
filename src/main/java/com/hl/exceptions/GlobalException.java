@@ -1,5 +1,6 @@
 package com.hl.exceptions;
 
+import cn.dev33.satoken.exception.NotLoginException;
 import com.hl.enums.ResultEnum;
 import com.hl.exceptions.CustomException;
 import com.hl.utils.SysResult;
@@ -25,7 +26,7 @@ public class GlobalException extends RuntimeException {
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public SysResult exceptionHandler(MethodArgumentNotValidException e) {
+    public SysResult error(MethodArgumentNotValidException e) {
         BindingResult result = e.getBindingResult();
         StringBuilder sbf = new StringBuilder();
         if (result.hasErrors()){
@@ -38,6 +39,11 @@ public class GlobalException extends RuntimeException {
             });
         }
         return SysResult.fail(200, sbf.toString());
+    }
+
+    @ExceptionHandler(NotLoginException.class)
+    public SysResult error(NotLoginException e){
+        return SysResult.fail(ResultEnum.USER_NOT_LOGGED.getResultCode(),ResultEnum.USER_NOT_LOGGED.getResultMsg());
     }
 
     @ExceptionHandler(Exception.class)

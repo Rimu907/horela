@@ -19,10 +19,10 @@ import java.sql.Date;
 @Data
 public class UserDto {
     //Dto加校验注解
-    @NotNull(message = "用户名不能为空;",groups = {VerifyGroup.Update.class})
+    @NotNull(message = "用户id不能为空;",groups = {VerifyGroup.Update.class})
     private Integer id;
 
-    @NotNull(message = "用户名不能为空;",groups = {VerifyGroup.Create.class,VerifyGroup.Update.class})
+    @NotNull(message = "用户名不能为空;",groups = {VerifyGroup.Create.class,VerifyGroup.Update.class,VerifyGroup.Login.class})
     @Pattern(regexp = "^[A-Za-z0-9][\\w-]*$",message = "用户名只能包含英文、数字、下划线、中划线，不能以中划线或下划线开头;",groups = {VerifyGroup.Create.class,VerifyGroup.Update.class})
     @Length(min = 1,max = 64,message = "用户名长度在64位以内;",groups = {VerifyGroup.Create.class,VerifyGroup.Update.class})
     private String username;
@@ -43,7 +43,7 @@ public class UserDto {
     @Pattern(regexp = "^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$",message = "邮箱格式不正确, 请检查后重试;",groups = {VerifyGroup.Create.class,VerifyGroup.Update.class})
     private String email;
 
-    @NotNull(message = "密码不能为空",groups = {VerifyGroup.Create.class,VerifyGroup.Update.class})
+    @NotNull(message = "密码不能为空",groups = {VerifyGroup.Create.class,VerifyGroup.Update.class,VerifyGroup.Login.class})
     @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,10}$", message = "密码必须包含大小写字母和数字的组合，不能使用特殊字符，长度在 8-10 之间;",groups = {VerifyGroup.Create.class,VerifyGroup.Update.class})
     private String password;
 
