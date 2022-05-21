@@ -8,6 +8,7 @@ import com.hl.enums.ResultEnum;
 import com.hl.exceptions.CustomException;
 import com.hl.service.IUserService;
 import com.hl.utils.SysResult;
+import com.hl.utils.VerifyGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -30,13 +31,13 @@ public class UserController {
     }
 
     @PostMapping("/addUser")
-    public SysResult addUser(@RequestBody @Validated UserDto user){
+    public SysResult addUser(@RequestBody @Validated(VerifyGroup.Create.class) UserDto user){
         userService.addUser(user);
         return SysResult.success();
     }
 
     @PutMapping("/modifyUser")
-    public SysResult modifyUser(@RequestBody @Validated UserDto user){
+    public SysResult modifyUser(@RequestBody @Validated(VerifyGroup.Update.class) UserDto user){
         userService.modifyUser(user);
         return SysResult.success();
     }
