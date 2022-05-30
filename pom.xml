@@ -80,6 +80,11 @@
             <artifactId>sa-token-spring-boot-starter</artifactId>
             <version>1.30.0</version>
         </dependency>
+        <!-- cache缓存 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
 
     </dependencies>
 

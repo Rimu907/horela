@@ -10,6 +10,14 @@ spring:
       url: jdbc:mysql://localhost:3306/horela?serverTimezone=UTC
       username: root
       password: root
+  cache:
+    type: redis
+    redis:
+      time-to-live: 10s
+      key-prefix: horela_
+  redis:
+    host: localhost
+    port: 6379
 
 mybatis-plus:
   configration:
